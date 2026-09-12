@@ -172,3 +172,44 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .site-nav { gap: .75rem 1rem; }
   section { padding: 3.75rem 0; }
 }
+/* Show the full landscape photos on computers */
+@media (min-width: 761px) {
+  .hero {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-content {
+    min-height: 100%;
+  }
+}
+
+/* On phones, show the full photo above the hero text */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 620px;
+    background: var(--ink);
+  }
+
+  .hero-slides,
+  .hero-overlay {
+    bottom: auto;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-content {
+    min-height: 620px;
+    padding: calc(56.25vw + 2.5rem) 0 3rem;
+    justify-content: flex-start;
+  }
+
+  .hero-arrow {
+    top: 28.125vw;
+  }
+
+  .hero-dots {
+    top: calc(56.25vw - 1.5rem);
+    bottom: auto;
+  }
+}
