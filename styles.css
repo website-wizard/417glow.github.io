@@ -1,0 +1,103 @@
+/* 417 GLOW — shared site styles
+   Colors, type, spacing, and layout live here. */
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --ink: #2a211c;
+  --ink-soft: #6b5f56;
+  --accent: #b8783d;
+  --accent-soft: #f1e3d3;
+  --line: #e9ddd0;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: Inter, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.6; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; }
+
+.wrap { width: min(1080px, calc(100% - 3rem)); margin: 0 auto; }
+.eyebrow { display: block; margin-bottom: .55rem; color: var(--accent); font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.button { display: inline-block; border: 1px solid var(--accent); border-radius: 4px; padding: .8rem 1.4rem; background: var(--accent); color: white; font-size: .94rem; font-weight: 600; transition: opacity .18s ease; }
+.button:hover { opacity: .85; }
+.button-outline { background: transparent; color: currentColor; border-color: currentColor; }
+
+/* Shared header — copy it exactly onto a new page to keep navigation consistent. */
+.site-header { background: var(--ink); color: white; }
+.site-header .wrap { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.mark { font-family: var(--font-display); font-size: 1.55rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 1.15rem; font-size: .9rem; }
+.site-nav a { color: rgba(255, 255, 255, .82); }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: white; }
+
+/* Home hero */
+.hero { position: relative; min-height: 570px; overflow: hidden; color: white; }
+.hero-bg, .hero-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-bg { object-fit: cover; }
+.hero-overlay { background: linear-gradient(180deg, rgba(30,20,12,.45), rgba(30,20,12,.12) 40%, rgba(30,20,12,.72)); }
+.hero-content { position: relative; z-index: 1; display: flex; min-height: 570px; flex-direction: column; justify-content: end; padding: 4rem 0; }
+.hero-copy { max-width: 38rem; }
+.hero-copy .eyebrow { color: rgba(255,255,255,.8); }
+.hero h1 { margin-bottom: 1rem; font-size: clamp(2.6rem, 6vw, 4.25rem); }
+.lede { max-width: 39rem; color: rgba(255,255,255,.88); font-size: 1.05rem; }
+.button-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+
+section { padding: 5rem 0; border-top: 1px solid var(--line); }
+.section-head { max-width: 43rem; margin-bottom: 2.4rem; }
+.section-head h2 { margin-bottom: .8rem; font-size: clamp(2rem, 4vw, 2.8rem); }
+.section-head p, .muted { color: var(--ink-soft); }
+
+.pricing-grid, .recommendation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+.card { padding: 1.7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.card.featured { border-color: var(--ink); background: var(--ink); color: white; }
+.tag { display: inline-block; margin-bottom: .9rem; border-radius: 99px; padding: .22rem .6rem; background: var(--accent-soft); color: var(--accent); font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.featured .tag { background: rgba(255,255,255,.16); color: white; }
+.card h3 { margin-bottom: .45rem; font-size: 1.55rem; }
+.amount { margin: .8rem 0; font-family: var(--font-display); font-size: 2.25rem; }
+.card p { color: var(--ink-soft); font-size: .92rem; }
+.featured p { color: rgba(255,255,255,.75); }
+.card ul { margin: 1.2rem 0 0; padding: 0; list-style: none; font-size: .9rem; }
+.card li { padding: .48rem 0; border-top: 1px solid var(--line); color: var(--ink-soft); }
+.featured li { border-color: rgba(255,255,255,.16); color: rgba(255,255,255,.85); }
+
+.about-grid, .split-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 5rem); }
+.about-grid img { width: 100%; border-radius: 8px; aspect-ratio: 4 / 5; object-fit: cover; }
+.about-copy h2, .split-grid h1 { margin-bottom: 1rem; font-size: clamp(2.25rem, 4vw, 3.2rem); }
+.about-copy p { color: var(--ink-soft); }
+
+/* Interior page intro */
+.page-intro { padding: 5.5rem 0 4.5rem; border: 0; background: var(--accent-soft); }
+.page-intro h1 { max-width: 13ch; margin-bottom: 1rem; font-size: clamp(2.8rem, 6vw, 4.5rem); }
+.page-intro p { max-width: 42rem; color: var(--ink-soft); font-size: 1.05rem; }
+
+.booking-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.5rem; }
+.booking-details, .booking-card { padding: clamp(1.7rem, 4vw, 3rem); border-radius: 8px; }
+.booking-details { background: var(--surface); border: 1px solid var(--line); }
+.booking-card { background: var(--ink); color: white; }
+.booking-card p { color: rgba(255,255,255,.78); }
+.contact-item { margin-top: 1.4rem; }
+.contact-item strong { display: block; margin-bottom: .2rem; color: var(--accent); font-size: .76rem; letter-spacing: .07em; text-transform: uppercase; }
+.booking-card .button { background: white; border-color: white; color: var(--ink); }
+
+.recommendation-card { overflow: hidden; padding: 0; }
+.recommendation-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.recommendation-copy { padding: 1.5rem; }
+.recommendation-copy h2 { margin-bottom: .55rem; font-size: 1.65rem; }
+.text-link { color: var(--accent); font-size: .92rem; font-weight: 600; }
+.notice { margin-top: 2rem; padding: 1rem 1.15rem; border-left: 3px solid var(--accent); color: var(--ink-soft); }
+
+footer { padding: 2.2rem 0; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .84rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+@media (max-width: 760px) {
+  .pricing-grid, .recommendation-grid, .about-grid, .split-grid, .booking-layout { grid-template-columns: 1fr; }
+  .pricing-grid { gap: 1rem; }
+  .about-grid img { max-height: 490px; }
+  .site-header .wrap { padding: 1rem 0; align-items: flex-start; flex-direction: column; }
+  .site-nav { gap: .75rem 1rem; }
+  section { padding: 3.75rem 0; }
+}

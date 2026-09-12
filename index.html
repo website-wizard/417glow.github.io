@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>417 Glow — Spray Tanning in Springfield, MO</title>
+  <meta name="description" content="Custom spray tanning in Springfield, Missouri.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- NAVIGATION: Edit a label or add a link here. Keep this identical on every page. -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="mark" href="index.html">417 Glow</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="recommendations.html">Product Favorites</a>
+        <a href="booking.html">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME HERO TEXT: Change only the words inside these elements. -->
+    <section class="hero">
+      <img class="hero-bg" src="https://picsum.photos/seed/glowtan/1600/900" alt="Warm, sunlit studio interior">
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">Springfield, MO · 417 Area</span>
+          <h1>A natural glow, no sun required.</h1>
+          <p class="lede">Custom spray tanning that looks like your best day at the beach — streak-free, fast-drying, and built around your skin tone.</p>
+          <div class="button-row">
+            <a class="button" href="booking.html">Book Your Session</a>
+            <a class="button button-outline" href="#services">See Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES: Each complete .card block can be moved, copied, or deleted. -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Services</span>
+          <h2>Simple pricing, great results</h2>
+          <p>Every session uses a custom-blended solution matched to your skin tone.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="card">
+            <span class="tag">Single session</span><h3>Classic Glow</h3><div class="amount">$40</div>
+            <p>A single full-body airbrush tan, perfect for a one-off event.</p>
+            <ul><li>Custom solution shade</li><li>Full-body application</li><li>Aftercare guide included</li></ul>
+          </article>
+          <article class="card featured">
+            <span class="tag">Most popular</span><h3>Monthly Glow</h3><div class="amount">$120</div>
+            <p>Four sessions a month — stay tan year-round for less per visit.</p>
+            <ul><li>4 sessions per month</li><li>Priority booking</li><li>10% off add-ons</li></ul>
+          </article>
+          <article class="card">
+            <span class="tag">Add-on</span><h3>Express Touch-Up</h3><div class="amount">$20</div>
+            <p>A quick refresh between full sessions to keep your color even.</p>
+            <ul><li>15-minute session</li><li>Face &amp; arms or full body</li><li>Great before events</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT TEXT: These paragraphs are intentionally separate so you can reorder them. -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <img src="https://picsum.photos/seed/glowowner/700/900" alt="Owner of 417 Glow in her studio">
+        <div class="about-copy">
+          <span class="eyebrow">About 417 Glow</span>
+          <h2>Run by someone who actually loves this town.</h2>
+          <p>417 Glow is a home-based spray tanning studio serving the Springfield area. Replace this paragraph with the real story — how she started and what makes every visit feel personal.</p>
+          <p>Add real details here: years of experience, certifications, favorite solution brand, or anything that builds trust with a first-time client.</p>
+          <p><a class="text-link" href="recommendations.html">See her favorite products →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split-grid">
+        <div>
+          <span class="eyebrow">Your best glow</span>
+          <h2>Everything you need, in one place.</h2>
+          <p class="muted">Ready for a tan? Book online. Want help keeping it looking great? Browse the product favorites selected by 417 Glow.</p>
+        </div>
+        <div class="button-row">
+          <a class="button" href="booking.html">Book a Session</a>
+          <a class="button button-outline" href="recommendations.html">Product Favorites</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>417 Glow</span><span>Springfield, MO</span><span>© <span id="year"></span></span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
