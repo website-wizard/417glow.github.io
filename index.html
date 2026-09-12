@@ -28,8 +28,17 @@
   <main>
     <!-- HOME HERO TEXT: Change only the words inside these elements. -->
     <section class="hero">
-      <img class="hero-bg" src="https://github.com/website-wizard/417glow.github.io/raw/main/Untitled49_20260912061256.jpeg" alt="Warm, sunlit studio interior">
+      <div class="hero-slides">
+        <img class="hero-slide active" src="https://github.com/website-wizard/417glow.github.io/raw/main/Untitled49_20260912061256.jpeg" alt="417 Glow spray tanning">
+        <img class="hero-slide" src="" alt="417 Glow spray tanning">
+        <img class="hero-slide" src="" alt="417 Glow spray tanning">
+        
       <div class="hero-overlay"></div>
+
+      <button class="hero-arrow hero-prev" aria-label="Previous photo>‹</button>
+      <button class="hero-arrow hero-next" aria-label="Next photo>›</button>
+      <div class="hero-dots"></div>div>
+        
       <div class="wrap hero-content">
         <div class="hero-copy">
           <span class="eyebrow">Springfield, MO · 417 Area</span>
@@ -100,6 +109,39 @@
     </section>
   </main>
   <footer><div class="wrap"><span>417 Glow</span><span>Springfield, MO</span><span>© <span id="year"></span></span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const slides = document.querySelectorAll(".hero-slide");
+  const dotsContainer = document.querySelector(".hero-dots");
+  const previous = document.querySelector(".hero-prev");
+  const next = document.querySelector(".hero-next");
+  let currentSlide = 0;
+
+  slides.forEach((slide, index) => {
+    const dot = document.createElement("button");
+    dot.setAttribute("aria-label", "Go to photo " + (index + 1));
+    dot.addEventListener("click", () => showSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".hero-dots button");
+
+  function showSlide(index) {
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+  }
+
+  previous.addEventListener("click", () => showSlide(currentSlide - 1));
+  next.addEventListener("click", () => showSlide(currentSlide + 1));
+
+  dots[0].classList.add("active");
+  setInterval(() => showSlide(currentSlide + 1), 5000);
+</script>
 </body>
 </html>
